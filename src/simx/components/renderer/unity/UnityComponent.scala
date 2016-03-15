@@ -327,9 +327,9 @@ class UnityComponent(name: Symbol = 'unity, address: String = "localhost", port:
               //val newScale = types.Scale(gt.Transformation.convert(types.Scale)(withOffset))
               sendJSONString(EntitySerialization.serialize(e, SValSet(newPos, newRot), types.Position, types.Rotation))
           }
-        } else {
+        } else if (!c.equals(gt.Scale)){
           observeSVar(e, c)
-        }
+        } // TODO: Handle Scale
     }
   }
 
